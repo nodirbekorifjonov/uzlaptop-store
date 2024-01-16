@@ -1,6 +1,6 @@
 .mobile-nav.active {
   visibility: visible;
-  opacity: 1;
+  transform: translateX(0);
 }
 
 .header-second__list.active,
@@ -15,7 +15,7 @@
 }
 
 .overlay.active {
-  opacity: 0.5;
+  visibility: visible;
 }
 
 .header-second__item ul.active {

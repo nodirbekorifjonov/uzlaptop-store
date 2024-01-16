@@ -17,7 +17,7 @@ const RootLayout = () => {
       <Header />
 
       {/* Main */}
-      <main>{<Outlet />}</main>
+      <main className="mt-[16rem] max-[876px]:mt-[14rem]">{<Outlet />}</main>
 
       {/* Footer */}
       <Footer />
