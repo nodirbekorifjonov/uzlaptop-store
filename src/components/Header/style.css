@@ -1,0 +1,25 @@
+.mobile-nav.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header-second__list.active,
+.mobile-nav__item.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-second__list.active {
+  transform: translateY(0);
+}
+
+.overlay.active {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 876px) {
+  .mobile-nav {
+    top: 10rem;
+  }
+}
