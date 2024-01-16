@@ -25,10 +25,10 @@ const Header = () => {
   const [addActive, setAddActive] = useState("");
   // Currency
   const [currency, setCurrency] = useState("USD");
-  const [openCurrency, setOpenCurrency] = useState(false);
+  const [openCurrency, setOpenCurrency] = useState("");
   // Language
   const [language, setLanguage] = useState("UZ");
-  const [openLanguage, setOpenLanguage] = useState(false);
+  const [openLanguage, setOpenLanguage] = useState("");
 
   // Handle Add Active
   const handleAddActive = () => {
@@ -37,13 +37,13 @@ const Header = () => {
 
   // HandleChangeCurrency
   const handleChangeCurrency = () => {
-    !openCurrency ? setOpenCurrency(true) : setOpenCurrency(false);
-    setOpenLanguage(false);
+    !openCurrency ? setOpenCurrency("active") : setOpenCurrency("");
+    setOpenLanguage("");
   };
   // HandleChangeLang
   const handleChangeLang = () => {
-    !openLanguage ? setOpenLanguage(true) : setOpenLanguage(false);
-    setOpenCurrency(false);
+    !openLanguage ? setOpenLanguage("active") : setOpenLanguage("");
+    setOpenCurrency("");
   };
 
   return (
@@ -101,7 +101,7 @@ const Header = () => {
           </nav>
           {/* Mobile Nav */}
           <nav
-            className={`mobile-nav opacity-0 invisible py-[2rem] transition-all duration-300 absolute bg-white left-0 top-[13rem] w-[80%] h-full ${addActive}`}
+            className={`mobile-nav opacity-0 invisible py-[2rem] transition-all duration-300 absolute bg-white left-0 top-[13rem] bottom-0 w-[80%] ${addActive}`}
           >
             <ul className="mobile-nav__list flex flex-col mb-[3rem]">
               <li className="mobile-nav__item">
@@ -161,7 +161,7 @@ const Header = () => {
                   className={`mobile-nav__item bg-white border-b-[1px] py-[1.5rem] px-[2rem] flex items-center gap-x-[1rem] text-[#676f7a] translate-x-[-20px] invisible opacity-0 transition-all duration-[2s] ${addActive} hover:bg-[#E5F1FF] hover:transition-none hover:duration-0`}
                 >
                   <FaQuestion />
-                  <span className="text-[1.6rem]">FaQ</span>
+                  <span className="text-[1.6rem]">FAQs</span>
                 </Link>
               </li>
             </ul>
@@ -178,24 +178,24 @@ const Header = () => {
                 </span>
                 <span className="font-semibold">{currency}</span>
                 <MdOutlineKeyboardArrowDown />
-                {openCurrency && (
-                  <ul className="absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center">
-                    <li
-                      onClick={() => setCurrency("USD")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/usa-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">USD</span>
-                    </li>
-                    <li
-                      onClick={() => setCurrency("UZS")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">UZS</span>
-                    </li>
-                  </ul>
-                )}
+                <ul
+                  className={`absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center opacity-0 invisible ${openCurrency}`}
+                >
+                  <li
+                    onClick={() => setCurrency("USD")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/usa-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">USD</span>
+                  </li>
+                  <li
+                    onClick={() => setCurrency("UZS")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">UZS</span>
+                  </li>
+                </ul>
               </li>
               {/* Language */}
               <li
@@ -207,31 +207,31 @@ const Header = () => {
                 </span>
                 <span className="font-semibold">{language}</span>
                 <MdOutlineKeyboardArrowDown />
-                {openLanguage && (
-                  <ul className="absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center">
-                    <li
-                      onClick={() => setLanguage("EN")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/usa-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">EN</span>
-                    </li>
-                    <li
-                      onClick={() => setLanguage("RU")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/ru-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">RU</span>
-                    </li>
-                    <li
-                      onClick={() => setLanguage("UZ")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">UZ</span>
-                    </li>
-                  </ul>
-                )}
+                <ul
+                  className={`absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center opacity-0 invisible ${openLanguage}`}
+                >
+                  <li
+                    onClick={() => setLanguage("EN")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/usa-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">EN</span>
+                  </li>
+                  <li
+                    onClick={() => setLanguage("RU")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/ru-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">RU</span>
+                  </li>
+                  <li
+                    onClick={() => setLanguage("UZ")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">UZ</span>
+                  </li>
+                </ul>
               </li>
             </ul>
           </nav>
@@ -241,9 +241,23 @@ const Header = () => {
       <div className="header-second border-b-[1px] border-[#E0E0E0]">
         <div className="site-container">
           <div className="py-[1.2rem] flex justify-between items-center max-[876px]:hidden">
-            <Link className="block cursor-pointer py-[1rem] px-[2rem] bg-[#0D6EFD] text-white rounded-[0.7rem] transition-all duration-300 hover:bg-[#127fff]">
-              Show Products
-            </Link>
+            <ul className="flex items-center gap-[2rem] text-[#676f7a]">
+              <li>
+                <Link className="block cursor-pointer py-[1rem] px-[2rem] bg-[#0D6EFD] text-white rounded-[0.7rem] transition-all duration-300 hover:bg-[#127fff]">
+                  Show Products
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:underline hover:text-[#0D6EFD]">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:underline hover:text-[#0D6EFD]">
+                  FAQs
+                </Link>
+              </li>
+            </ul>
             <ul className="header-second__list select-none flex items-center gap-x-[3rem] text-[#555b63]">
               {/* Currency */}
               <li
@@ -255,25 +269,26 @@ const Header = () => {
                 </span>
                 <span className="font-semibold">{currency}</span>
                 <MdOutlineKeyboardArrowDown />
-                {openCurrency && (
-                  <ul className="absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center">
-                    <li
-                      onClick={() => setCurrency("USD")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/usa-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">USD</span>
-                    </li>
-                    <li
-                      onClick={() => setCurrency("UZS")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">UZS</span>
-                    </li>
-                  </ul>
-                )}
+                <ul
+                  className={`absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center opacity-0 invisible ${openCurrency}`}
+                >
+                  <li
+                    onClick={() => setCurrency("USD")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/usa-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">USD</span>
+                  </li>
+                  <li
+                    onClick={() => setCurrency("UZS")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">UZS</span>
+                  </li>
+                </ul>
               </li>
+
               {/* Language */}
               <li
                 onClick={handleChangeLang}
@@ -284,31 +299,32 @@ const Header = () => {
                 </span>
                 <span className="font-semibold">{language}</span>
                 <MdOutlineKeyboardArrowDown />
-                {openLanguage && (
-                  <ul className="absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center">
-                    <li
-                      onClick={() => setLanguage("EN")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/usa-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">EN</span>
-                    </li>
-                    <li
-                      onClick={() => setLanguage("RU")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/ru-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">RU</span>
-                    </li>
-                    <li
-                      onClick={() => setLanguage("UZ")}
-                      className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
-                    >
-                      <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
-                      <span className="font-semibold text-[1.6rem]">UZ</span>
-                    </li>
-                  </ul>
-                )}
+
+                <ul
+                  className={`absolute w-[12rem] py-[1rem] rounded-[1rem] shadow-[10px_6px_37px_-1px_rgba(0,0,0,0.04)] bg-white top-[3.5rem] border border-[#e0e0e098] right-0 flex flex-col justify-center opacity-0 invisible ${openLanguage}`}
+                >
+                  <li
+                    onClick={() => setLanguage("EN")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/usa-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">EN</span>
+                  </li>
+                  <li
+                    onClick={() => setLanguage("RU")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/ru-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">RU</span>
+                  </li>
+                  <li
+                    onClick={() => setLanguage("UZ")}
+                    className="flex items-center justify-center gap-[1.2rem] py-[0.5rem] hover:bg-gray-200"
+                  >
+                    <img src="./images/svg/uzb-flag.svg" alt="" width={25} />
+                    <span className="font-semibold text-[1.6rem]">UZ</span>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

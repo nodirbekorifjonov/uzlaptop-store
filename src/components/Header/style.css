@@ -18,8 +18,7 @@
   opacity: 0.5;
 }
 
-@media screen and (max-width: 876px) {
-  .mobile-nav {
-    top: 10rem;
-  }
+.header-second__item ul.active {
+  opacity: 1;
+  visibility: visible;
 }
