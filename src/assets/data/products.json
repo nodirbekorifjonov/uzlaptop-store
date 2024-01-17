@@ -1,0 +1,127 @@
+[
+  {
+    "productId": "1",
+    "productName": "Laptop Model X",
+    "productBrand": "Brand A",
+    "productCost": "$1200",
+    "productProcessor": "Intel Core i7",
+    "productMemory": "512GB SSD",
+    "productRam": "16GB",
+    "productScreen": "15.6 inches",
+    "productCategory": "laptops"
+  },
+  {
+    "productId": "2",
+    "productName": "Gaming Laptop Y",
+    "productBrand": "Brand B",
+    "productCost": "$1500",
+    "productProcessor": "AMD Ryzen 9",
+    "productMemory": "1TB SSD",
+    "productRam": "32GB",
+    "productScreen": "17.3 inches",
+    "productCategory": "laptops"
+  },
+  {
+    "productId": "3",
+    "productName": "Wireless Mouse M1",
+    "productBrand": "Brand C",
+    "productCost": "$30",
+    "productCategory": "computer mouses"
+  },
+  {
+    "productId": "4",
+    "productName": "Mechanical Keyboard K2",
+    "productBrand": "Brand D",
+    "productCost": "$80",
+    "productCategory": "keyboards"
+  },
+  {
+    "productId": "5",
+    "productName": "Noise-Canceling Headphones H3",
+    "productBrand": "Brand E",
+    "productCost": "$150",
+    "productCategory": "headphones"
+  },
+  {
+    "productId": "6",
+    "productName": "Ultra-Slim Laptop Z",
+    "productBrand": "Brand F",
+    "productCost": "$1100",
+    "productProcessor": "Intel Core i5",
+    "productMemory": "256GB SSD",
+    "productRam": "8GB",
+    "productScreen": "14 inches",
+    "productCategory": "laptops"
+  },
+  {
+    "productId": "7",
+    "productName": "Ergonomic Mouse M2",
+    "productBrand": "Brand G",
+    "productCost": "$40",
+    "productCategory": "computer mouses"
+  },
+  {
+    "productId": "8",
+    "productName": "RGB Mechanical Keyboard K3",
+    "productBrand": "Brand H",
+    "productCost": "$100",
+    "productCategory": "keyboards"
+  },
+  {
+    "productId": "9",
+    "productName": "Wireless Headphones H4",
+    "productBrand": "Brand I",
+    "productCost": "$120",
+    "productCategory": "headphones"
+  },
+  {
+    "productId": "10",
+    "productName": "Convertible Laptop A",
+    "productBrand": "Brand J",
+    "productCost": "$1300",
+    "productProcessor": "Intel Core i9",
+    "productMemory": "1TB SSD",
+    "productRam": "64GB",
+    "productScreen": "13.3 inches",
+    "productCategory": "laptops"
+  },
+  {
+    "productId": "11",
+    "productName": "High-DPI Gaming Mouse M3",
+    "productBrand": "Brand K",
+    "productCost": "$50",
+    "productCategory": "computer mouses"
+  },
+  {
+    "productId": "12",
+    "productName": "Compact Mechanical Keyboard K4",
+    "productBrand": "Brand L",
+    "productCost": "$70",
+    "productCategory": "keyboards"
+  },
+  {
+    "productId": "13",
+    "productName": "Wireless Earbuds E1",
+    "productBrand": "Brand M",
+    "productCost": "$80",
+    "productCategory": "headphones"
+  },
+  {
+    "productId": "14",
+    "productName": "Business Laptop B",
+    "productBrand": "Brand N",
+    "productCost": "$900",
+    "productProcessor": "Intel Core i3",
+    "productMemory": "128GB SSD",
+    "productRam": "4GB",
+    "productScreen": "15 inches",
+    "productCategory": "laptops"
+  },
+  {
+    "productId": "15",
+    "productName": "Ergonomic Vertical Mouse M4",
+    "productBrand": "Brand O",
+    "productCost": "$35",
+    "productCategory": "computer mouses"
+  }
+]

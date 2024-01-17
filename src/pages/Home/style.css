@@ -1,0 +1,38 @@
+.offers__cards-link img {
+  width: 95% !important;
+  height: auto !important;
+}
+
+/* inqury section */
+.inqury__content {
+  background: linear-gradient(
+      95deg,
+      #2c7cf1 7.19%,
+      rgba(0, 209, 255, 0.5) 89.49%
+    ),
+    url(./images/png/inqury-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* subscribe section */
+.subscribe__links.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.subscribe__links-btn.active {
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 725px) {
+  .hero .site-container,
+  .offers .site-container,
+  .inqury .site-container {
+    padding: 0;
+  }
+
+  .inqury__form {
+    display: none;
+  }
+}

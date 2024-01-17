@@ -22,3 +22,9 @@
   background: "./images/png/hero-img.png";
   object-fit: cover;
 }
+
+@media screen and (max-width: 725px) {
+  .swiper-slide {
+    border-radius: 0 !important;
+  }
+}
