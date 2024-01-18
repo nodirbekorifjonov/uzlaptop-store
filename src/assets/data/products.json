@@ -2,126 +2,156 @@
   {
     "productId": "1",
     "productName": "Laptop Model X",
+    "productImg": "laptopmodelx.png",
     "productBrand": "Brand A",
     "productCost": "$1200",
     "productProcessor": "Intel Core i7",
     "productMemory": "512GB SSD",
     "productRam": "16GB",
     "productScreen": "15.6 inches",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "laptops"
   },
   {
     "productId": "2",
     "productName": "Gaming Laptop Y",
+    "productImg": "gaminglaptopy.png",
     "productBrand": "Brand B",
     "productCost": "$1500",
     "productProcessor": "AMD Ryzen 9",
     "productMemory": "1TB SSD",
     "productRam": "32GB",
     "productScreen": "17.3 inches",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "laptops"
   },
   {
     "productId": "3",
     "productName": "Wireless Mouse M1",
+    "productImg": "wirelessmousem1.png",
     "productBrand": "Brand C",
     "productCost": "$30",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "computer mouses"
   },
   {
     "productId": "4",
     "productName": "Mechanical Keyboard K2",
+    "productImg": "mechanicalkeyboardk2.png",
     "productBrand": "Brand D",
     "productCost": "$80",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "keyboards"
   },
   {
     "productId": "5",
     "productName": "Noise-Canceling Headphones H3",
+    "productImg": "noisecancelingheadphonesh3.png",
     "productBrand": "Brand E",
     "productCost": "$150",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "headphones"
   },
   {
     "productId": "6",
     "productName": "Ultra-Slim Laptop Z",
+    "productImg": "ultraSlimLaptopZ.png",
     "productBrand": "Brand F",
     "productCost": "$1100",
     "productProcessor": "Intel Core i5",
     "productMemory": "256GB SSD",
     "productRam": "8GB",
     "productScreen": "14 inches",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "laptops"
   },
   {
     "productId": "7",
     "productName": "Ergonomic Mouse M2",
+    "productImg": "ErgonomicMouseM2.png",
     "productBrand": "Brand G",
     "productCost": "$40",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "computer mouses"
   },
   {
     "productId": "8",
     "productName": "RGB Mechanical Keyboard K3",
+    "productImg": "RGBMechanicalKeyboardK3.png",
     "productBrand": "Brand H",
     "productCost": "$100",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "keyboards"
   },
   {
     "productId": "9",
     "productName": "Wireless Headphones H4",
+    "productImg": "WirelessHeadphonesH4.png",
     "productBrand": "Brand I",
     "productCost": "$120",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "headphones"
   },
   {
     "productId": "10",
     "productName": "Convertible Laptop A",
+    "productImg": "ConvertibleLaptopA.png",
     "productBrand": "Brand J",
     "productCost": "$1300",
     "productProcessor": "Intel Core i9",
     "productMemory": "1TB SSD",
     "productRam": "64GB",
     "productScreen": "13.3 inches",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "laptops"
   },
   {
     "productId": "11",
     "productName": "High-DPI Gaming Mouse M3",
+    "productImg": "HighDPIGamingMouseM3.png",
     "productBrand": "Brand K",
     "productCost": "$50",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "computer mouses"
   },
   {
     "productId": "12",
     "productName": "Compact Mechanical Keyboard K4",
+    "productImg": "compactMechanicalKeyboardK4.png",
     "productBrand": "Brand L",
     "productCost": "$70",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "keyboards"
   },
   {
     "productId": "13",
     "productName": "Wireless Earbuds E1",
+    "productImg": "wirelessEarbudsE1.png",
     "productBrand": "Brand M",
     "productCost": "$80",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "headphones"
   },
   {
     "productId": "14",
     "productName": "Business Laptop B",
+    "productImg": "BusinessLaptopB.png",
     "productBrand": "Brand N",
     "productCost": "$900",
     "productProcessor": "Intel Core i3",
     "productMemory": "128GB SSD",
     "productRam": "4GB",
     "productScreen": "15 inches",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "laptops"
   },
   {
     "productId": "15",
     "productName": "Ergonomic Vertical Mouse M4",
+    "productImg": "ErgonomicVerticalMouseM4.png",
     "productBrand": "Brand O",
     "productCost": "$35",
+    "producrtDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     "productCategory": "computer mouses"
   }
 ]

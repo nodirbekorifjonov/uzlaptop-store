@@ -427,7 +427,7 @@ const Home = () => {
                 <Link className="recommended__link w-[22rem] h-[31rem] px-[1rem] pt-[0.9rem] pb-[0.8rem] block bg-white border-[1px] border-[#E0E0E0] rounded-[0.6rem] max-[478px]:w-[16.5rem] max-[478px]:h-[24rem]">
                   <div className="recommended__link-img flex justify-center items-center w-full h-[19.4rem] p-[1.2rem] mb-[1.4rem] max-[478px]:h-[14rem]">
                     <img
-                      src="./images/png/keyboard-img.png"
+                      src={`./images/png/${product.productImg}`}
                       alt=""
                       className="w-full"
                     />

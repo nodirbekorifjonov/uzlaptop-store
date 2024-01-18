@@ -148,7 +148,7 @@ const Header = () => {
               <li className="mobile-nav__item">
                 <Link
                   onClick={() => setAddActive("")}
-                  to="/"
+                  to="/shop"
                   className={`mobile-nav__item bg-white py-[1.2rem] px-[2.3rem] flex items-center gap-x-[1.6rem] text-[#676f7a] translate-x-[-20px] invisible opacity-0 transition-all duration-[2s] ${addActive} hover:bg-[#E5F1FF] hover:transition-none hover:duration-0`}
                 >
                   <FaList />
@@ -268,7 +268,10 @@ const Header = () => {
           <div className="py-[1.2rem] flex justify-between items-center max-[876px]:hidden">
             <ul className="flex items-center gap-[2rem] text-[#676f7a]">
               <li>
-                <Link className="block cursor-pointer py-[1rem] px-[2rem] bg-[#0D6EFD] text-white rounded-[0.7rem] transition-all duration-300 hover:bg-[#127fff]">
+                <Link
+                  to="/shop"
+                  className="block cursor-pointer py-[1rem] px-[2rem] bg-[#0D6EFD] text-white rounded-[0.7rem] transition-all duration-300 hover:bg-[#127fff]"
+                >
                   Show Products
                 </Link>
               </li>
