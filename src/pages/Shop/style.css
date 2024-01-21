@@ -69,3 +69,11 @@
 .product-view.active {
   background: #dee2e7;
 }
+
+.mobile-categories__item.active {
+  background: #cfe8f8;
+}
+
+.categories__item.active {
+  color: #0d6efd;
+}

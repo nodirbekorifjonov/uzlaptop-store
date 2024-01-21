@@ -33,9 +33,14 @@ const Shop = () => {
   const handleOpenAcc2 = () => setOpenAcc2((cur) => !cur);
   const handleOpenAcc3 = () => setOpenAcc3((cur) => !cur);
 
+  const [showMobileFilter, setShowMobileFilter] = useState(false);
+
   // filters
   const [filterCategory, setFilterCategory] = useState("all");
   const [selectedBrands, setSelectedBrands] = useState([]);
+  const [filteredBrands, setFilteredBrands] = useState([]);
+  const [changeMinCost, setChangeMinCost] = useState(0);
+  const [changeMaxCost, setChangeMaxCost] = useState(9999);
 
   // Shop Products Category buttons
   const [gridButton, setGridButton] = useState(false);
@@ -50,6 +55,21 @@ const Shop = () => {
     setBurgerButton(true);
     setGridButton(false);
   };
+
+  const costBrandFilter = productData.filter((product) => {
+    const shouldOutputAllBrands = selectedBrands.length === 0;
+    const filterBrands = shouldOutputAllBrands
+      ? productData
+      : selectedBrands.includes(product.productBrand);
+
+    const filteredCategories =
+      filterCategory === "all" || product.productCategory === filterCategory;
+
+    const filterCost =
+      changeMaxCost > product.productCost &&
+      changeMinCost <= product.productCost;
+    return filteredCategories && filterBrands && filterCost;
+  });
 
   // Update selected brands
   const handleBrandCheckboxChange = (brand) => {
@@ -79,17 +99,45 @@ const Shop = () => {
       {/* Mobile Filter */}
       <div className="mobile-categories px-[2rem] py-[1.8rem] bg-white overflow-y-auto hidden max-[875px]:block">
         <ul className="mobile-categories__list flex items-center gap-[0.4rem]">
-          <li className="mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem]">
+          <li
+            onClick={() => setFilterCategory("laptops")}
+            className={`mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem] ${
+              filterCategory === "laptops" ? "active" : ""
+            }`}
+          >
             Laptops
           </li>
-          <li className="mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem]">
+          <li
+            onClick={() => setFilterCategory("keyboards")}
+            className={`mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem] ${
+              filterCategory === "keyboards" ? "active" : ""
+            }`}
+          >
             Keyboards
           </li>
-          <li className="mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem]">
+          <li
+            onClick={() => setFilterCategory("mouses")}
+            className={`mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem] ${
+              filterCategory === "mouses" ? "active" : ""
+            }`}
+          >
             Mouses
           </li>
-          <li className="mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem]">
+          <li
+            onClick={() => setFilterCategory("headphones")}
+            className={`mobile-categories__item py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem] ${
+              filterCategory === "headphones" ? "active" : ""
+            }`}
+          >
             Headphones
+          </li>
+          <li
+            onClick={() => setFilterCategory("all")}
+            className={`mobile-categories__item flex-shrink-0 py-[0.8rem] px-[1.5rem] bg-[#EFF2F4] text-[1.6rem] text-[#0D6EFD] cursor-pointer rounded-[0.6rem] ${
+              filterCategory === "all" ? "active" : ""
+            }`}
+          >
+            All products
           </li>
         </ul>
       </div>
@@ -98,12 +146,83 @@ const Shop = () => {
           12,911 items in <span className="font-semibold">All categories</span>
         </h5>
         <div className="mobile-filter">
-          <button className="mobile-filter-btn flex justify-center items-center gap-[1rem] border-[1px] border-[#DEE2E7] py-[0.6rem] px-[1rem] rounded-[0.6rem]">
+          <button
+            onClick={() =>
+              showMobileFilter
+                ? setShowMobileFilter(false)
+                : setShowMobileFilter(true)
+            }
+            className="mobile-filter-btn flex justify-center items-center gap-[1rem] border-[1px] border-[#DEE2E7] py-[0.6rem] px-[1rem] rounded-[0.6rem]"
+          >
             Filter{" "}
             <span className="text-[#8B96A5] text-[1.4rem] font-medium">
               <VscFilter />
             </span>
           </button>
+          {showMobileFilter && (
+            <div className="absolute w-[70%] p-[2rem] bg-white border z-20 top-[27.5rem] left-0">
+              <form className="flex flex-col items-start text-[#505050]">
+                {filteredProducts.map((product) => (
+                  <label
+                    key={product.productId}
+                    className="py-[0.9rem] flex items-center gap-[1rem] text-[1.6rem] cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      onChange={() =>
+                        handleBrandCheckboxChange(product.productBrand)
+                      }
+                    />
+                    <span>{product.productBrand}</span>
+                  </label>
+                ))}
+              </form>
+              <form className="block pt-[0.8rem]">
+                <label className="block py-[0.8rem]">
+                  <input
+                    type="range"
+                    name="range__name"
+                    id="range__id"
+                    min={0}
+                    max={9999}
+                    className="block mb-[2rem]"
+                    value={changeMaxCost}
+                    onChange={(changeEvent) =>
+                      setChangeMaxCost(changeEvent.target.value)
+                    }
+                  />
+                </label>
+                <div className="flex gap-[0.9rem] mb-[0.8rem]">
+                  <label className="block w-[48%]">
+                    <span className="mb-[0.5rem] text-[1.6rem]">Min</span>
+                    <input
+                      type="text"
+                      placeholder="0"
+                      value={changeMinCost} // Set this to minCost
+                      onChange={(e) => setChangeMinCost(Number(e.target.value))}
+                      className="border-[1px] border-[#DEE2E7] outline-none w-full p-[1rem] rounded-[0.6rem]"
+                    />
+                  </label>
+                  <label className="block w-[48%]">
+                    <span className="mb-[0.5rem] text-[1.6rem]">Max</span>
+                    <input
+                      type="text"
+                      placeholder="999999"
+                      value={changeMaxCost} // Set this to maxCost
+                      onChange={(e) => setChangeMaxCost(Number(e.target.value))}
+                      className="border-[1px] border-[#DEE2E7] outline-none w-full p-[1rem] rounded-[0.6rem]"
+                    />
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  className="py-[1rem] px-[1.6rem] flex justify-center items-center w-full border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white text-[#0D6EFD] text-[1.6rem] font-semibold"
+                >
+                  Apply
+                </button>
+              </form>
+            </div>
+          )}
         </div>
         <div className="flex">
           <span
@@ -145,31 +264,41 @@ const Shop = () => {
                 <div className="flex flex-col items-start text-[#505050]">
                   <button
                     onClick={() => setFilterCategory("laptops")}
-                    className="py-[0.9rem] text-[1.6rem]"
+                    className={`categories__item py-[0.9rem] text-[1.6rem] ${
+                      filterCategory === "laptops" ? "active" : ""
+                    }`}
                   >
                     Laptops
                   </button>
                   <button
                     onClick={() => setFilterCategory("keyboards")}
-                    className="py-[0.9rem] text-[1.6rem]"
+                    className={`categories__item py-[0.9rem] text-[1.6rem] ${
+                      filterCategory === "keyboards" ? "active" : ""
+                    }`}
                   >
                     Keyboards
                   </button>
                   <button
                     onClick={() => setFilterCategory("mouses")}
-                    className="py-[0.9rem] text-[1.6rem]"
+                    className={`categories__item py-[0.9rem] text-[1.6rem] ${
+                      filterCategory === "mouses" ? "active" : ""
+                    }`}
                   >
                     Mouses
                   </button>
                   <button
                     onClick={() => setFilterCategory("headphones")}
-                    className="py-[0.9rem] text-[1.6rem]"
+                    className={`categories__item py-[0.9rem] text-[1.6rem] ${
+                      filterCategory === "headphones" ? "active" : ""
+                    }`}
                   >
                     Headphones
                   </button>
                   <button
                     onClick={() => setFilterCategory("all")}
-                    className="py-[0.9rem] text-[1.6rem] text-[#0d6efd]"
+                    className={`categories__item py-[0.9rem] text-[1.6rem] ${
+                      filterCategory === "all" ? "active" : ""
+                    }`}
                   >
                     View all
                   </button>
@@ -195,14 +324,15 @@ const Shop = () => {
                       key={product.productId}
                       className="py-[0.9rem] flex items-center gap-[1rem] text-[1.6rem] cursor-pointer"
                     >
-                      <input type="checkbox" />
+                      <input
+                        type="checkbox"
+                        onChange={() =>
+                          handleBrandCheckboxChange(product.productBrand)
+                        }
+                      />
                       <span>{product.productBrand}</span>
                     </label>
                   ))}
-                  {/* <label className="py-[0.9rem] flex items-center gap-[1rem] text-[1.6rem] cursor-pointer">
-                  <input type="checkbox" />
-                  <span>Asus</span>
-                </label> */}
                 </form>
               </AccordionBody>
             </Accordion>
@@ -227,11 +357,13 @@ const Shop = () => {
                       type="range"
                       name="range__name"
                       id="range__id"
-                      min={350}
-                      max={6000}
+                      min={0}
+                      max={9999}
                       className="block mb-[2rem]"
-                      // value={price}
-                      // onChange={(changeEvent) => setPrice(changeEvent.target.value)}
+                      value={changeMaxCost}
+                      onChange={(changeEvent) =>
+                        setChangeMaxCost(changeEvent.target.value)
+                      }
                     />
                   </label>
                   <div className="flex gap-[0.9rem] mb-[0.8rem]">
@@ -240,14 +372,22 @@ const Shop = () => {
                       <input
                         type="text"
                         placeholder="0"
+                        value={changeMinCost} // Set this to minCost
+                        onChange={(e) =>
+                          setChangeMinCost(Number(e.target.value))
+                        }
                         className="border-[1px] border-[#DEE2E7] outline-none w-full p-[1rem] rounded-[0.6rem]"
                       />
                     </label>
                     <label className="block w-[48%]">
-                      <span className="mb-[0.5rem] text-[1.6rem]">Min</span>
+                      <span className="mb-[0.5rem] text-[1.6rem]">Max</span>
                       <input
                         type="text"
                         placeholder="999999"
+                        value={changeMaxCost} // Set this to maxCost
+                        onChange={(e) =>
+                          setChangeMaxCost(Number(e.target.value))
+                        }
                         className="border-[1px] border-[#DEE2E7] outline-none w-full p-[1rem] rounded-[0.6rem]"
                       />
                     </label>
@@ -295,8 +435,11 @@ const Shop = () => {
               {/* Products Grid View */}
               {gridButton && (
                 <ul className="shop__product-list grid grid-cols-3 gap-[2rem] max-[1050px]:grid-cols-2 max-[875px]:grid-cols-3 max-[825px]:grid-cols-2 max-[545px]:grid-cols-1">
-                  {productData.map((product) => (
-                    <li className="shop__products-item relative">
+                  {costBrandFilter.map((product) => (
+                    <li
+                      key={product.productId}
+                      className="shop__products-item relative"
+                    >
                       <Link className="block border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white max-h-[40.5rem] w-full h-[40.5rem]">
                         {/* w-[29.5rem] */}
                         <div className="py-[1.5rem] px-[3.2rem] border-b-[1px] border-[#DEE2E7] w-full flex justify-center items-center max-[1050px]:px-[1.5rem] max-[1050px]:py-[1rem]">
@@ -339,7 +482,7 @@ const Shop = () => {
               {/* Products List View */}
               {burgerButton && (
                 <ul className="shop__product-list flex flex-col gap-[1rem]">
-                  {productData.map((product) => (
+                  {costBrandFilter.map((product) => (
                     <li
                       key={product.productId}
                       className="shop__products-item w-full pt-[0.9rem] pr-[2rem] pb-[1.1rem] pl-[0.7rem] border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white flex max-[675px]:py-[0.8rem] max-[675px]:pl-[0.8rem] max-[675px]:pr-[3rem]"
