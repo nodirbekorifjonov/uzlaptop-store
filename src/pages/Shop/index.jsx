@@ -46,6 +46,9 @@ const Shop = () => {
   const [gridButton, setGridButton] = useState(false);
   const [burgerButton, setBurgerButton] = useState(true);
 
+  // show more btn
+  const [loadMoreProducts, setLoadMoreProducts] = useState(6);
+
   const handleGridBtn = () => {
     setGridButton(true);
     setBurgerButton(false);
@@ -215,6 +218,7 @@ const Shop = () => {
                   </label>
                 </div>
                 <button
+                  onClick={() => setShowMobileFilter(false)}
                   type="button"
                   className="py-[1rem] px-[1.6rem] flex justify-center items-center w-full border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white text-[#0D6EFD] text-[1.6rem] font-semibold"
                 >
@@ -431,11 +435,11 @@ const Shop = () => {
             </div>
 
             {/* Products Content */}
-            <div className="shop__products-content">
+            <div className="shop__products-content mb-[4rem]">
               {/* Products Grid View */}
               {gridButton && (
                 <ul className="shop__product-list grid grid-cols-3 gap-[2rem] max-[1050px]:grid-cols-2 max-[875px]:grid-cols-3 max-[825px]:grid-cols-2 max-[545px]:grid-cols-1">
-                  {costBrandFilter.map((product) => (
+                  {costBrandFilter.slice(0, loadMoreProducts).map((product) => (
                     <li
                       key={product.productId}
                       className="shop__products-item relative"
@@ -482,7 +486,7 @@ const Shop = () => {
               {/* Products List View */}
               {burgerButton && (
                 <ul className="shop__product-list flex flex-col gap-[1rem]">
-                  {costBrandFilter.map((product) => (
+                  {costBrandFilter.slice(0, loadMoreProducts).map((product) => (
                     <li
                       key={product.productId}
                       className="shop__products-item w-full pt-[0.9rem] pr-[2rem] pb-[1.1rem] pl-[0.7rem] border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white flex max-[675px]:py-[0.8rem] max-[675px]:pl-[0.8rem] max-[675px]:pr-[3rem]"
@@ -536,6 +540,13 @@ const Shop = () => {
                 </ul>
               )}
             </div>
+            {/* Load More Products Button */}
+            <button
+              onClick={() => setLoadMoreProducts(loadMoreProducts + 6)}
+              className="load-more py-[1rem] px-[3.2rem] mx-auto flex justify-center items-center border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white text-[#0D6EFD] text-[1.6rem] font-semibold transition-all duration-300 hover:bg-[#d9e8ff]"
+            >
+              Load More
+            </button>
           </div>
         </div>
       </section>

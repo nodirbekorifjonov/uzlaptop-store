@@ -201,7 +201,8 @@ const Header = () => {
               <li className="mobile-nav__item">
                 <Link
                   onClick={() => setAddActive("")}
-                  to="/"
+                  to="https://vcarduz.netlify.app/vcard/1"
+                  target="_blank"
                   className={`mobile-nav__item bg-white py-[1.2rem] px-[2.3rem] flex items-center gap-x-[1.6rem] text-[#676f7a] translate-x-[-20px] invisible opacity-0 transition-all duration-[2s] ${addActive} hover:bg-[#E5F1FF] hover:transition-none hover:duration-0`}
                 >
                   <FaHeadset />
@@ -276,7 +277,11 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link className="hover:underline hover:text-[#0D6EFD]">
+                <Link
+                  to="https://vcarduz.netlify.app/vcard/1"
+                  target="_blank"
+                  className="hover:underline hover:text-[#0D6EFD]"
+                >
                   Contact
                 </Link>
               </li>
