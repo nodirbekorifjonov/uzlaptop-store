@@ -22,6 +22,7 @@ import { VscFilter } from "react-icons/vsc";
 
 // data
 import productData from "../../assets/data/products.json";
+import SubscribeSection from "../../components/SubscribeSection";
 
 const Shop = () => {
   // accordion
@@ -550,6 +551,8 @@ const Shop = () => {
           </div>
         </div>
       </section>
+      {/* Subscribe Section */}
+      <SubscribeSection />
     </>
   );
 };

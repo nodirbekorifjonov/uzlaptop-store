@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // react-router-dom
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // styles
 import "./style.css";
@@ -29,6 +29,9 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 
 const Header = () => {
+  // Use Location
+  const location = useLocation();
+
   const [addActive, setAddActive] = useState("");
   // Currency
   const [currency, setCurrency] = useState("USD");
@@ -270,10 +273,10 @@ const Header = () => {
             <ul className="flex items-center gap-[2rem] text-[#676f7a]">
               <li>
                 <Link
-                  to="/shop"
+                  to={location.pathname === "/shop" ? "/" : "/shop"}
                   className="block cursor-pointer py-[1rem] px-[2rem] bg-[#0D6EFD] text-white rounded-[0.7rem] transition-all duration-300 hover:bg-[#127fff]"
                 >
-                  Show Products
+                  {location.pathname === "/shop" ? "Home" : "Show Products"}
                 </Link>
               </li>
               <li>

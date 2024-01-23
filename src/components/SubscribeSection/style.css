@@ -1,0 +1,9 @@
+/* subscribe section */
+.subscribe__links.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .subscribe__links-btn.active {
+    transform: rotate(45deg);
+  }

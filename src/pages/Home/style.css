@@ -15,16 +15,6 @@
   background-size: cover;
 }
 
-/* subscribe section */
-.subscribe__links.active {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.subscribe__links-btn.active {
-  transform: rotate(45deg);
-}
-
 @media screen and (max-width: 725px) {
   .hero .site-container,
   .offers .site-container,

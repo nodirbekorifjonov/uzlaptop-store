@@ -24,7 +24,14 @@ const HeroCarousel = () => {
         }}
         className="mySwiper"
       >
-        <SwiperSlide className="flex flex-col justify-start items-start pt-[5.6rem] pl-[4.4rem] text-start text-[#1C1C1C] bg-[url('./images/jpg/hero-img.jpg')] bg-no-repeat bg-cover rounded-[0.6rem] max-[565px]:p-[2.6rem]">
+        <SwiperSlide
+          style={{
+            background: "url('./images/jpg/hero-img.jpg')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+          className="flex flex-col justify-start items-start pt-[5.6rem] pl-[4.4rem] text-start text-[#1C1C1C] rounded-[0.6rem] max-[565px]:p-[2.6rem]"
+        >
           <h3 className="text-[2.8rem] max-[565px]:text-[1.8rem]">
             Latest trending
           </h3>
@@ -35,7 +42,14 @@ const HeroCarousel = () => {
             Learn more
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col justify-start items-start pt-[5.6rem] pl-[4.4rem] text-start text-[#1C1C1C] bg-[url('./images/jpg/hero-img.jpg')] bg-no-repeat bg-cover rounded-[0.6rem] max-[565px]:p-[2.6rem]">
+        <SwiperSlide
+          style={{
+            background: "url('./images/jpg/hero-img.jpg')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+          className="flex flex-col justify-start items-start pt-[5.6rem] pl-[4.4rem] text-start text-[#1C1C1C] rounded-[0.6rem] max-[565px]:p-[2.6rem]"
+        >
           <h3 className="text-[2.8rem] max-[565px]:text-[1.8rem]">
             Latest trending
           </h3>
@@ -46,7 +60,14 @@ const HeroCarousel = () => {
             Learn more
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col justify-start items-start pt-[5.6rem] pl-[4.4rem] text-start text-[#1C1C1C] bg-[url('./images/jpg/hero-img.jpg')] bg-no-repeat bg-cover rounded-[0.6rem] max-[565px]:p-[2.6rem]">
+        <SwiperSlide
+          style={{
+            background: "url('./images/jpg/hero-img.jpg')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+          className="flex flex-col justify-start items-start pt-[5.6rem] pl-[4.4rem] text-start text-[#1C1C1C] rounded-[0.6rem] max-[565px]:p-[2.6rem]"
+        >
           <h3 className="text-[2.8rem] max-[565px]:text-[1.8rem]">
             Latest trending
           </h3>
