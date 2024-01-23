@@ -113,7 +113,7 @@ const Home = () => {
               {/* Hero User Menu */}
               <div className="hero__user pt-[1.4rem] bg-[#E3F0FF] rounded-[0.6rem] px-[1rem] pb-[1.2rem]">
                 <div className="hero__user-info flex items-center gap-[0.9rem] mb-[1.3rem]">
-                  <img src="./images/svg/hero-avatar.svg" alt="" width={44} />
+                  <img src="/images/svg/hero-avatar.svg" alt="" width={44} />
                   <span className="text-[1.6rem] text-[#1c1c1c]">
                     Hi, user <br /> let's get stated
                   </span>
@@ -193,7 +193,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/laptop-img.png"
+                      src="/images/png/laptop-img.png"
                       alt=""
                       className="w-[95%]"
                     />
@@ -213,7 +213,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/keyboard-img.png"
+                      src="/images/png/keyboard-img.png"
                       alt=""
                       className="w-full"
                     />
@@ -233,7 +233,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/mouse-img.png"
+                      src="/images/png/mouse-img.png"
                       alt=""
                       className="w-[95%]"
                     />
@@ -253,7 +253,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/headphones-img.png"
+                      src="/images/png/headphones-img.png"
                       alt=""
                       className="w-[95%]"
                     />
@@ -279,7 +279,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/laptop-img.png"
+                      src="/images/png/laptop-img.png"
                       alt=""
                       className="w-[95%]"
                     />
@@ -299,7 +299,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/keyboard-img.png"
+                      src="/images/png/keyboard-img.png"
                       alt=""
                       className="w-full"
                     />
@@ -319,7 +319,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/mouse-img.png"
+                      src="/images/png/mouse-img.png"
                       alt=""
                       className="w-[95%]"
                     />
@@ -339,7 +339,7 @@ const Home = () => {
                 >
                   <div className="offers__cards-img flex justify-center items-center w-[14rem] h-[14rem] mb-[1.1rem]">
                     <img
-                      src="./images/png/headphones-img.png"
+                      src="/images/png/headphones-img.png"
                       alt=""
                       className="w-[95%]"
                     />
@@ -422,7 +422,7 @@ const Home = () => {
                 <Link className="recommended__link w-[22rem] h-[31rem] px-[1rem] pt-[0.9rem] pb-[0.8rem] block bg-white border-[1px] border-[#E0E0E0] rounded-[0.6rem] max-[478px]:w-[16.5rem] max-[478px]:h-[24rem]">
                   <div className="recommended__link-img flex justify-center items-center w-full h-[19.4rem] p-[1.2rem] mb-[1.4rem] max-[478px]:h-[14rem]">
                     <img
-                      src={`./images/png/${product.productImg}`}
+                      src={`/images/png/${product.productImg}`}
                       alt=""
                       className="w-full"
                     />

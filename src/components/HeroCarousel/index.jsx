@@ -26,7 +26,7 @@ const HeroCarousel = () => {
       >
         <SwiperSlide
           style={{
-            background: "url('./images/jpg/hero-img.jpg')",
+            background: "url('/images/jpg/hero-img.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
@@ -44,7 +44,7 @@ const HeroCarousel = () => {
         </SwiperSlide>
         <SwiperSlide
           style={{
-            background: "url('./images/jpg/hero-img.jpg')",
+            background: "url('/images/jpg/hero-img.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
@@ -62,7 +62,7 @@ const HeroCarousel = () => {
         </SwiperSlide>
         <SwiperSlide
           style={{
-            background: "url('./images/jpg/hero-img.jpg')",
+            background: "url('/images/jpg/hero-img.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}

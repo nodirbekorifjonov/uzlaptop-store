@@ -1,0 +1,13 @@
+.mySwiper .swiper-slide-thumb-active {
+  border-color: #505050;
+}
+
+.details-swiper {
+  height: auto;
+}
+
+@media screen and (max-width: 380px) {
+  .details-carousel {
+    width: 100% !important;
+  }
+}

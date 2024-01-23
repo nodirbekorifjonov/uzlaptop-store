@@ -1,0 +1,5 @@
+@media screen and (max-width: 450px) {
+  .shopdetails-content.site-container {
+    padding: 0;
+  }
+}

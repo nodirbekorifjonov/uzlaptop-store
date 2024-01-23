@@ -445,12 +445,15 @@ const Shop = () => {
                       key={product.productId}
                       className="shop__products-item relative"
                     >
-                      <Link className="block border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white max-h-[40.5rem] w-full h-[40.5rem]">
+                      <Link
+                        to={`/shop/${product.productId}`}
+                        className="block border-[1px] border-[#DEE2E7] rounded-[0.6rem] bg-white max-h-[40.5rem] w-full h-[40.5rem]"
+                      >
                         {/* w-[29.5rem] */}
                         <div className="py-[1.5rem] px-[3.2rem] border-b-[1px] border-[#DEE2E7] w-full flex justify-center items-center max-[1050px]:px-[1.5rem] max-[1050px]:py-[1rem]">
                           <div className="w-[23rem] h-[23rem] flex justify-center items-center p-[1.3rem] my-auto">
                             <img
-                              src={`./images/png/${product.productImg}`}
+                              src={`/images/png/${product.productImg}`}
                               alt=""
                             />
                           </div>
@@ -495,7 +498,7 @@ const Shop = () => {
                       {/* Card Img */}
                       <div className="shop__products-img w-[21rem] h-[21rem] pt-[1.2rem] pr-[1.2rem] pb-[1.3rem] pl-[1.3rem] flex justify-center items-center flex-shrink-0 max-[675px]:w-[15rem] max-[675px]:h-[15rem] max-[675px]:p-[0.65rem] max-[440px]:w-[9.8rem] max-[440px]:h-[9.8rem] max-[440px]:p-[0.65rem]">
                         <img
-                          src={`./images/png/${product.productImg}`}
+                          src={`/images/png/${product.productImg}`}
                           alt=""
                           className="w-full"
                         />
@@ -525,7 +528,7 @@ const Shop = () => {
                             {`${product.producrtDescription.slice(0, 100)}...`}
                           </p>
                           <Link
-                            to=""
+                            to={`/shop/${product.productId}`}
                             className="text-[1.6rem] font-medium text-[#0D6EFD] max-[440px]:text-[1.4rem]"
                           >
                             View details

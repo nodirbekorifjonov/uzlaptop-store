@@ -10,7 +10,7 @@
       #2c7cf1 7.19%,
       rgba(0, 209, 255, 0.5) 89.49%
     ),
-    url(./images/png/inqury-img.png);
+    url(/images/png/inqury-img.png);
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="site-container flex gap-[9rem] max-[955px]:flex-col max-[955px]:gap-y-[3rem] max-[585px]:justify-center">
           <div className="footer-socials w-[27.6rem] flex flex-col gap-y-[1.5rem] flex-shrink-0 max-[955px]:w-[70%] max-[955px]:text-center max-[955px]:flex-shrink max-[955px]:self-center max-[955px]:items-center">
             <Link to="/" className="">
-              <img src="./images/svg/logo-symbol.svg" alt="" />
+              <img src="/images/svg/logo-symbol.svg" alt="" />
             </Link>
             <p className="text-[#505050] text-[1.6rem] ">
               Best information about the company gies here but now lorem ipsum
@@ -141,7 +141,7 @@ const Footer = () => {
                 <li className="footer__item">
                   <Link className="footer__link">
                     <img
-                      src="./images/svg/appstore-market.svg"
+                      src="/images/svg/appstore-market.svg"
                       alt=""
                       width={124}
                       height={42}
@@ -151,7 +151,7 @@ const Footer = () => {
                 <li className="footer__item">
                   <Link className="footer__link">
                     <img
-                      src="./images/svg/googleplay-market.svg"
+                      src="/images/svg/googleplay-market.svg"
                       alt=""
                       width={124}
                       height={42}
