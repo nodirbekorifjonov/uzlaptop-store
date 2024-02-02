@@ -305,6 +305,7 @@ export default {
       DEFAULT: "1",
     },
     fontFamily: {
+      montserrat: ["Montserrat"],
       inter: ["Inter"],
       roboto: ["Roboto"],
       sans: [

@@ -15,6 +15,9 @@ import Home from "../pages/Home";
 import Shop from "../pages/Shop";
 import Cart from "../pages/Cart";
 import ShopDetails from "../pages/Shop/ShopDetails";
+import AuthLayout from "../layouts/AuthLayout";
+import LogIn from "../components/LogIn";
+import SignUp from "../components/SignUp";
 
 const Routes = () => {
   const routes = createBrowserRouter(
@@ -26,6 +29,10 @@ const Routes = () => {
           <Route path=":id" element={<ShopDetails />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
+        <Route path="/auth" element={<AuthLayout />}>
+          <Route index element={<LogIn />} />
+          <Route path=":signup" element={<SignUp />} />
+        </Route>
       </Route>
     )
   );
